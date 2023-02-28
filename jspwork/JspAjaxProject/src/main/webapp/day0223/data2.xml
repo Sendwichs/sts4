@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<person no="1">
+		<name>박재승</name>
+		<addr>서울</addr>
+	</person>
+	
+	<person no="2">
+	<name>성한경</name>
+	<addr>청주</addr>
+	</person>
+	
+	<person no="3">
+	<name>김기리</name>
+	<addr>충주</addr>
+	</person>
+	
+</data>

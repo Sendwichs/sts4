@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board>
+	<data id="angel" name="이미현">
+		<subject>Hello</subject>
+		<photo>../image/01.png</photo>
+	</data>
+	<data id="me" name="성한경">
+		<subject>이건 나야</subject>
+		<photo>../image/02.png</photo>
+	</data>
+	<data id="gf" name="장환라">
+		<subject>여자친구</subject>
+		<photo>../image/03.png</photo>
+	</data>
+	<data id="fe" name="김철수">
+		<subject>친구</subject>
+		<photo>../image/04.png</photo>
+	</data>
+	<data id="hong" name="홍길동">
+		<subject>영웅</subject>
+		<photo>../image/05.png</photo>
+	</data>
+
+
+</board>

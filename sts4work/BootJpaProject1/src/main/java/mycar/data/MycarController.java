@@ -28,6 +28,7 @@ public class MycarController {
 	// insert
 	@PostMapping("/car/insert")
 	public String insert(@ModelAttribute MycarDto dto) {
+
 		dao.insertCar(dto);
 
 		return "redirect:carlist";
@@ -69,10 +70,21 @@ public class MycarController {
 
 	@PostMapping("/car/update")
 	public String update(@ModelAttribute MycarDto dto) {
-
 		dao.updateCar(dto);
 
 		return "redirect:carlist";
+	}
+
+	@GetMapping("/car/sangsae")
+	public ModelAndView sangsaePage(Long num) {
+		ModelAndView mview = new ModelAndView();
+
+		MycarDto dto = dao.getData(num);
+		mview.addObject("dto", dto);
+
+		mview.setViewName("sangsae");
+
+		return mview;
 	}
 
 }

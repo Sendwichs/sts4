@@ -13,7 +13,9 @@
 </head>
 <body>
 	<form action="update" method="post">
+		<input type="hidden" name="num" value="${dto.num }">
 		<table class="table table-bordered" style="width: 300px">
+
 			<tr>
 				<th width="100">자동차명</th>
 				<td><input type="text" name="carname" class="form-control" value=${dto.carname }></td>
@@ -35,7 +37,7 @@
 			<tr>
 				<td colspan="2" align="center">
 					<button type="submit" class="btn btn-success">서버에 전송</button>
-					<button type="button" class="btn btn-success" onclick="location.href='carlist'">목록</button>
+					<button type="button" class="btn btn-info" onclick="location.href='carlist'">목록</button>
 
 				</td>
 			</tr>

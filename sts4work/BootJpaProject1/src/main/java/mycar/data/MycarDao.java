@@ -1,10 +1,10 @@
 package mycar.data;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository
 public class MycarDao {
@@ -34,6 +34,12 @@ public class MycarDao {
 
 	// 수정
 	public void updateCar(MycarDto dto) {
+		
 		carInter.save(dto);
 	}
+	
+	public void sangsae(MycarDto dto) {
+		
+	}
+	
 }

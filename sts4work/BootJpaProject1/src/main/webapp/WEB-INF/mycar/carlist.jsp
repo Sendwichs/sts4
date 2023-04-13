@@ -36,19 +36,19 @@
 			<th width="160">구입일</th>
 			<th width="160">등록일</th>
 			<th width="160">편집</th>
-			
+
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
 				<td>${i.count }</td>
-				<td>${dto.carname }</td>
+				<td><a href="sangsae">${dto.carname }</a></td>
 				<td><div class="box" style="background-color: ${dto.carcolor}"></div></td>
 				<td><fmt:formatNumber value="${dto.carprice }" type="currency" /></td>
 				<td>${dto.carguip}</td>
 				<td><fmt:formatDate value="${dto.guipday }" pattern="yyyy-MM-dd" /></td>
 				<td>
-				<button type="button" class="btn btn-success btn-xs" onclick="location.href='updateform?num=${dto.num}'">수정</button>
-				<button type="button" class="btn btn-danger btn-xs" onclick="location.href='delete?num=${dto.num}'">삭제</button>
+					<button type="button" class="btn btn-success btn-xs" onclick="location.href='updateform?num=${dto.num}'">수정</button>
+					<button type="button" class="btn btn-danger btn-xs" onclick="location.href='delete?num=${dto.num}'">삭제</button>
 				</td>
 			</tr>
 		</c:forEach>

@@ -24,7 +24,7 @@
 	<button type="button" class="btn btn-info" onclick="location.href='carform'">차 정보 추가</button>
 	<h3 class="alert alert-info">${tcount }개의정보</h3>
 
-	<table class="table table=bordered" style="width: 800px">
+	<table class="table table-bordered" style="width: 800px">
 		<caption>
 			<b>자동차 목록</b>
 		</caption>

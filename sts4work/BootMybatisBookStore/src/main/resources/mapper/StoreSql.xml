@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.StoreMapperInter">
+
+	<select id="getAllDatas" resultType="sdto">
+		select * from seojum order by num
+	</select>
+
+	<select id="getTotalCount" resultType="int">
+		select count(*) from seojum
+	</select>
+
+	<insert id="insertStore" parameterType="sdto">
+		insert into seojum(bookname,bookwriter,bookprice,bookphoto,bookcompany,ipgoday) values(#{bookname},#{bookwriter},#{bookprice},#{bookphoto},#{bookcompany},now())
+	</insert>
+
+	<select id="getData" resultType="sdto" parameterType="int">
+		select * from seojum where num=#{num}
+	</select>
+
+	<delete id="deleteStore" parameterType="int">
+		delete from seojum where num=#{num}
+	</delete>
+</mapper>

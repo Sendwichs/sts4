@@ -6,11 +6,12 @@
 	</select>
 
 	<insert id="insertMember" parameterType="MemberDto">
-		insert into bootmember (name,id,pass,photo,hp,addr,email,gaipday) values(#{name},#{id},#{pass},#{photo},#{hp},#{addr},#{email},now())
+		insert into bootmember (name,id,pw,photo,hp,addr,email,gaipday) values(#{name},#{id},#{pw},#{photo},#{hp},#{addr},#{email},now())
 	</insert>
 
 	<!-- id 중복체크 -->
 	<select id="getSearchId" parameterType="String" resultType="int">
 		select count(*) from bootmember where id=#{id}
 	</select>
+	
 </mapper>

@@ -89,13 +89,13 @@
 		}
 
 		//중복체크
-		if ($("span.idsuccess").text() != 'ok') {
+		if ($("span.idsuccess").text() != 'Ok') {
 			alert("아이디 중복체크를 해주세요");
 			return false;
 		}
 
 		//비밀번호
-		if ($("span.passsuccess").text() != 'ok') {
+		if ($("span.passsuccess").text() != 'Ok') {
 			alert("비밀번호가 서로 다릅니다");
 			return false;
 		}
@@ -131,9 +131,9 @@
 			<tr>
 				<td>
 					<div class="form-inline">
-						<input type="password" style="width: 120px;" class="form-control" name="pass" id="pass" placeholder="숫자4자리" required="required">
+						<input type="password" style="width: 120px;" class="form-control" name="pw" id="pass" placeholder="숫자4자리" required="required">
 
-						<input type="password" style="width: 120px;" class="form-control" name="pass" id="pass2" placeholder="숫자4자리" required="required">
+						<input type="password" style="width: 120px;" class="form-control" name="pw2" id="pass2" placeholder="숫자4자리" required="required">
 
 						&nbsp;
 						<span class="passsuccess" style="width: 60px; color: red"></span>

@@ -13,7 +13,7 @@ public class MemberDto {
 	private String num;
 	private String name;
 	private String id;
-	private String pass;
+	private String pw;
 	private String photo;
 	private String hp;
 	private String addr;

@@ -12,23 +12,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 </head>
 <body>
-	<button type="button" class="btn btn-info" onclick="location.href='list'">전체회원목록</button>
 
-	<c:forEach items="${list }" var="dto">
-		<table class="table table-bordered" style="width: 800px">
-			<tr>
-				<th>이름</th>
-				<th>아이디</th>
-				<th>비밀번호</th>
-				<th>사진</th>
-				<th>전화번호</th>
-				<th>주소</th>
-				<th>이메일</th>
-				<th>가입날짜</th>
+	<button type="button" class="btn btn-info" onclick="location.href='list'">전체회원목록</button>
+	<h3 align="center">★ 총 ${count }명 ★</h3>
+	<table class="table table-bordered" style="width: 1200px">
+		<tr">
+			<th style="text-align: center;">번호</th>
+			<th style="text-align: center;">이름</th>
+			<th style="text-align: center;">아이디</th>
+			<th style="text-align: center;">비밀번호</th>
+			<th style="text-align: center;">전화번호</th>
+			<th style="text-align: center;">주소</th>
+			<th style="text-align: center;">이메일</th>
+			<th style="text-align: center;">가입날짜</th>
+		</tr>
+		<c:forEach items="${list }" var="dto" varStatus="i">
+			<tr align="center">
+				<td>${i.count}</td>
+				<td>
+					<img alt="" src="../photo/${dto.photo }" style="width: 25px; height: 25px">
+					${dto.name }
+				</td>
+				<td>${dto.id }</td>
+				<td>${dto.pw }</td>
+				<td>${dto.hp }</td>
+				<td>${dto.addr }</td>
+				<td>${dto.email }</td>
+				<td>${dto.gaipday }</td>
+				<td>
+					<input type="checkbox" class="del" num=${dto.num }>
+				</td>
 			</tr>
 
+		</c:forEach>
+		<tr>
+			<td colspan="9" align="center">
+				<button type="button" class="btn btn-success" id="update" onclick="location.href='updateform?num=">수정</button>
+				<button type="button" class="btn btn-danger" id="delete" onclick="location.href='delete?num=">삭제</button>
+			</td>
+		</tr>
 
-		</table>
-	</c:forEach>
+	</table>
 </body>
 </html>

@@ -59,7 +59,7 @@ div.layout div.main {
 			<tiles:insertAttribute name="menu2" />
 		</div>
 		<div class="main">
-			<tiles:insertAttribute name="main2" />
+			<tiles:insertAttribute name="main" />
 		</div>
 	</div>
 </body>

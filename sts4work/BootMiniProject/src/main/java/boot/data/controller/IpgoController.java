@@ -50,7 +50,7 @@ public class IpgoController {
 		mview.addObject("totalCount", totalCount);
 
 		// mview.setViewName("ipgolist"); jsp 리졸버
-		mview.setViewName("/ipgo/ipgolist"); //tiles 리졸버 /폴더명/파일명
+		mview.setViewName("/ipgo/ipgolist"); // tiles 리졸버 /폴더명/파일명
 
 		return mview;
 	}
@@ -96,4 +96,9 @@ public class IpgoController {
 		return "redirect:list";
 	}
 
+	// 오시는 길로 가기.. 쌍용교육센터.. sub레이아웃으로 나오게
+	@GetMapping("/load/map")
+	public String loadmap() {
+		return "/sub/load/map"; // tiles 레이아웃 /폴더명/파일명 or /sub/폴더명/파일명
+	}
 }

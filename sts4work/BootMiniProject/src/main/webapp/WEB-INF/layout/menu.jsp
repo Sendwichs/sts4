@@ -61,10 +61,10 @@ ul.menu li a {
 			<a href="${root }/login/main">로그인</a>
 		</li>
 		<li>
-			<a href="${root }/login/form">회원가입</a>
+			<a href="${root }/member/form">회원가입</a>
 		</li>
 		<li>
-			<a href="${root }/member/form">상품목록</a>
+			<a href="${root }/sangpum/list">상품목록</a>
 		</li>
 		<li>
 			<a href="${root }/load/map">오시는길</a>

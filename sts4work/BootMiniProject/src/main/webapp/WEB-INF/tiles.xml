@@ -16,6 +16,7 @@
 		<put-attribute name="title2" value="/WEB-INF/layout/title2.jsp"></put-attribute>
 		<put-attribute name="menu2" value="/WEB-INF/layout/menu2.jsp"></put-attribute>
 		<put-attribute name="main" value="/WEB-INF/layout/main.jsp"></put-attribute>
+		<put-attribute name="info2" value="/WEB-INF/layout/info2.jsp"></put-attribute>
 	</definition>
 
 	<!-- tiles 매핑 경로 설정 -->

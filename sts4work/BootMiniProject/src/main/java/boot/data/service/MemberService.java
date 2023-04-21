@@ -1,6 +1,8 @@
 package boot.data.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +26,7 @@ public class MemberService implements MemberSeviceInter {
 	public void insertMember(MemberDto dto) {
 		// TODO Auto-generated method stub
 		mapper.insertMember(dto);
-		
+
 	}
 
 	@Override
@@ -32,6 +34,27 @@ public class MemberService implements MemberSeviceInter {
 		// TODO Auto-generated method stub
 		return mapper.getSearchId(id);
 	}
-	
-	
+
+	@Override
+	public String getName(String id) {
+		// TODO Auto-generated method stub
+		return mapper.getName(id);
+	}
+
+	@Override
+	public int loginIdPwCheck(String id, String pw) {
+
+		Map<String, String> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pw", pw);
+
+		return mapper.loginIdPwCheck(map);
+	}
+
+	@Override
+	public MemberDto getDataById(String id) {
+		// TODO Auto-generated method stub
+		return mapper.getDataById(id);
+	}
+
 }

@@ -12,11 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 </head>
 <body>
-
-	<c:set var="root" value="<%=request.getContextPath()%>" />
-	<a href="${root }">
-		<img alt="" src="${root }/image/title.png">
-		<b>SpringBoot + MyBatis + Tiles</b>
-	</a>
+	<script type="text/javascript">
+		alert("로그인 실패");
+		history.back();
+	</script>
 </body>
 </html>

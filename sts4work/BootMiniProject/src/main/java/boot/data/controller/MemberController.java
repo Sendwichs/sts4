@@ -30,12 +30,12 @@ public class MemberController {
 	@Autowired
 	MemberService service;
 
-	@GetMapping("/member/form")
+	@GetMapping("/sub/member/form")
 	public String memberform() {
-		return "/member/memberform";
+		return "/sub/member/memberform";
 	}
 
-	@GetMapping("/member/list")
+	@GetMapping("/sub/member/list")
 	public String list(Model model) {
 
 		// 전체 조회
@@ -44,11 +44,11 @@ public class MemberController {
 		model.addAttribute("list", list);
 		model.addAttribute("count", list.size());
 
-		return "/member/memberlist";
+		return "/sub/member/memberlist";
 	}
 
 	// 중복체크
-	@GetMapping("/member/idcheck")
+	@GetMapping("/sub/member/idcheck")
 	@ResponseBody
 	public Map<String, Integer> idcheck(@RequestParam String id) {
 		Map<String, Integer> map = new HashMap<>();
@@ -60,7 +60,7 @@ public class MemberController {
 		return map;
 	}
 
-	@PostMapping("/member/insert")
+	@PostMapping("/sub/member/insert")
 	public String insert(@ModelAttribute MemberDto dto, @RequestParam MultipartFile myphoto, HttpSession session) {
 
 		String path = session.getServletContext().getRealPath("/photo");
@@ -87,12 +87,12 @@ public class MemberController {
 	}
 
 	// 나의 정보로 이동
-	@GetMapping("/member/myinfo")
+	@GetMapping("/sub/member/myinfo")
 	public String myinfo(Model model) {
 		List<MemberDto> list = service.getAllMembers();
 
 		model.addAttribute("list", list);
 
-		return "/member/myinfo";
+		return "/sub/member/myinfo";
 	}
 }

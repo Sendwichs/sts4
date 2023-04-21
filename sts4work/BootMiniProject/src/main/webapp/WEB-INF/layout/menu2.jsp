@@ -46,31 +46,31 @@ ul.menu li a {
 			<a href="${root }/">Home</a>
 		</li>
 		<li>
-			<a href="${root }/ipgo/form">상품등록</a>
+			<a href="${root }/sub/ipgo/form">상품등록</a>
 		</li>
 		<li>
-			<a href="${root }/ipgo/list">상품목록</a>
+			<a href="${root }/sub/ipgo/list">상품목록</a>
 		</li>
 		<li>
-			<a href="${root }/board/list">게시판</a>
+			<a href="${root }/sub/board/list">게시판</a>
 		</li>
 		<li>
-			<a href="${root }/member/list">회원목록</a>
+			<a href="${root }/sub/member/list">회원목록</a>
 		</li>
 		<li>
-			<a href="${root }/login/main">로그인</a>
+			<a href="${root }/sub/login/main">로그인</a>
 		</li>
 		<li>
-			<a href="${root }/member/form">회원가입</a>
+			<a href="${root }/sub/member/form">회원가입</a>
 		</li>
 		<li>
-			<a href="${root }/member/myinfo">나의정보</a>
+			<a href="${root }/sub/member/myinfo">나의정보</a>
 		</li>
 		<li>
-			<a href="${root }/sangpum/list">상품목록</a>
+			<a href="${root }/sub/sangpum/list">상품목록</a>
 		</li>
 		<li>
-			<a href="${root }/load/map">오시는길</a>
+			<a href="${root }/sub/load/map">오시는길</a>
 		</li>
 	</ul>
 </body>

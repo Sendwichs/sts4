@@ -12,6 +12,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 </head>
 <body>
-로그인폼
+	<div align="center">
+		<form action="loginprocess" method="post">
+			<table class="table table-bordered" style="width: 300px">
+				<caption>
+					<b>회원 로그인</b>
+				</caption>
+				<tr>
+					<td>
+						<input type="text" name="id" class="form-control" placeholder="아이디입력" required="required" autofocus="autofocus" style="width: 200px" value="${sessionScope.saveok==null?'':sessionScope.myid }">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="password" name="pw" class="form-control" placeholder="비밀번호입력" required="required" autofocus="autofocus" style="width: 200px">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="checkbox" name="cbsave" ${sessionScope.saveok==null?"":"checked" }>
+						아이디저장&nbsp;&nbsp;
+						<button type="submit" class="btn btn-success">회원로그인</button>
+					</td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
 </body>
 </html>

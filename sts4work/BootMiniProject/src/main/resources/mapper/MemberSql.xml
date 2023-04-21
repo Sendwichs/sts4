@@ -13,5 +13,19 @@
 	<select id="getSearchId" parameterType="String" resultType="int">
 		select count(*) from bootmember where id=#{id}
 	</select>
-	
+
+	<!-- id에 따른 이름 반환 -->
+	<select id="getName" parameterType="String" resultType="String">
+		select name from bootmember where id=#{id}
+	</select>
+
+	<!-- id와 파라미터 넘겨서(map) 1 or 0 -->
+	<select id="loginIdPwCheck" parameterType="Map" resultType="int">
+		select count(*) from bootmember where id=#{id} and pw=#{pw}
+	</select>
+
+	<select id="getDataById" parameterType="String" resultType="MemberDto">
+		select * from bootmember where id=#{id}
+	</select>
+
 </mapper>

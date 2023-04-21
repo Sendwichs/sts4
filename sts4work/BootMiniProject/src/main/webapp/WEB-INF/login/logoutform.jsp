@@ -13,31 +13,17 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath()%>" />
-
-
-	<c:if test="${sessionScope.loginok==null }">
-		<img alt="" src="${root }/image/6번 칸.png" width="130" height="130" class="img-circle">
-	</c:if>
-
-	<c:if test="${sessionScope.loginok!=null }">
-		<img alt="" src="${root }/photo/${sessionScope.loginphoto}" width="130" height="130" class="img-circle">
-	</c:if>
-	<br>
-	<br>
-	<span class="glyphicon glyphicon-envelope">email</span>
-	&nbsp;sist@gmail.com
-	<br>
-	<br>
-	<span class="glyphicon glyphicon-cog"></span>
-	&nbsp;쌍용교육센터
-	<br>
-	<br>
-	<a href="">
-		<img alt="" src="../image/insta.PNG" style="width: 30px;">
-		&nbsp;쌍용교육센터
-	</a>
-	<br>
-	<br>
-	<img alt="" src="../image/animation_smart.gif" style="width: 200px;">
+<body>
+	<div style="margin-left: 100px; margin-top: 100px;">
+		<img alt="" src="${root }/image/blackwidow.png" width="200" align="left" hspace="20">
+		<br>
+		<br>
+		<!--id통한 이름받아서 표시 -->
+		<b>${name }님 로그인중~~~</b>
+		<br>
+		<br>
+		<br>
+		<button type="button" class="btn btn-danger" onclick="location.href='logoutprocess'">로그아웃</button>
+	</div>
 </body>
 </html>

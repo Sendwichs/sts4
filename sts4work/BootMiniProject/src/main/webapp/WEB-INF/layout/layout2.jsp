@@ -21,28 +21,26 @@ body {
 }
 
 div.layout div {
-	border: 1px solid gray;
 	font-family: 'Nanum Pen Script', cursive;
 }
 
 div.layout div.title {
 	position: absolute;
 	top: 10px;
-	left: 600px;
-	height: 100px;
+	left: 200px;
+	height: 130px;
 	font-family: 'Nanum Pen Script', cursive;
 }
 
 div.layout div.menu {
 	position: absolute;
 	top: 150px;
-	left: 150px;
-	height: 80px;
+	left: 200px;
 	font-family: 'Nanum Pen Script', cursive;
 }
 
 div.layout div.main {
-	position: absolute;
+	position: relative;
 	top: 250px;
 	left: 250px;
 	height: 800px;
@@ -51,12 +49,16 @@ div.layout div.main {
 </style>
 </head>
 <body>
+
 	<div class="layout">
 		<div class="title">
 			<tiles:insertAttribute name="title2" />
 		</div>
 		<div class="menu">
 			<tiles:insertAttribute name="menu2" />
+		</div>
+		<div class="info">
+			<tiles:insertAttribute name="info2" />
 		</div>
 		<div class="main">
 			<tiles:insertAttribute name="main" />

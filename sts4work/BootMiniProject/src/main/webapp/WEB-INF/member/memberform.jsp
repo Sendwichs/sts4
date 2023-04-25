@@ -26,7 +26,6 @@
 			$("#myphoto").trigger("click");
 		});
 
-		//사진불러오면 이미지 미리보기하기
 		//사진 불러오면 미리보기하기
 		$("#myphoto").change(function() {
 
@@ -104,7 +103,7 @@
 </head>
 <body>
 	<form action="insert" method="post" enctype="multipart/form-data" onsubmit="return check()">
-		<table class="table table-bordered" style="width: 600px;">
+		<table class="table table-bordered" style="width: 600px; position: relative; left: 450px">
 			<caption>
 				<b>회원가입</b>
 			</caption>

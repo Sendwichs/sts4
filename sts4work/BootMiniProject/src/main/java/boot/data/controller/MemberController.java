@@ -11,6 +11,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.expr.NewArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,12 +31,12 @@ public class MemberController {
 	@Autowired
 	MemberService service;
 
-	@GetMapping("/sub/member/form")
+	@GetMapping("/member/form")
 	public String memberform() {
-		return "/sub/member/memberform";
+		return "/member/memberform";
 	}
 
-	@GetMapping("/sub/member/list")
+	@GetMapping("/member/list")
 	public String list(Model model) {
 
 		// 전체 조회
@@ -44,11 +45,11 @@ public class MemberController {
 		model.addAttribute("list", list);
 		model.addAttribute("count", list.size());
 
-		return "/sub/member/memberlist";
+		return "/member/memberlist";
 	}
 
 	// 중복체크
-	@GetMapping("/sub/member/idcheck")
+	@GetMapping("/member/idcheck")
 	@ResponseBody
 	public Map<String, Integer> idcheck(@RequestParam String id) {
 		Map<String, Integer> map = new HashMap<>();
@@ -60,7 +61,7 @@ public class MemberController {
 		return map;
 	}
 
-	@PostMapping("/sub/member/insert")
+	@PostMapping("/member/insert")
 	public String insert(@ModelAttribute MemberDto dto, @RequestParam MultipartFile myphoto, HttpSession session) {
 
 		String path = session.getServletContext().getRealPath("/photo");
@@ -82,17 +83,60 @@ public class MemberController {
 		}
 
 		// return "/member/gaipsuccess";
-		return "redirect:list";
+		return "/layout/main";
 
 	}
 
 	// 나의 정보로 이동
-	@GetMapping("/sub/member/myinfo")
+	@GetMapping("/member/myinfo")
 	public String myinfo(Model model) {
 		List<MemberDto> list = service.getAllMembers();
 
 		model.addAttribute("list", list);
 
-		return "/sub/member/myinfo";
+		return "/member/myinfo";
+	}
+
+	@GetMapping("/member/delete")
+	@ResponseBody // ajax 하려면 필요함
+	public void delete(@RequestParam String num) {
+		service.deleteMember(num);
+	}
+
+	@PostMapping("/member/updatephoto")
+	@ResponseBody
+	public void updatePhoto(String num, MultipartFile photo, HttpSession session) {
+		// 업로드 될 경로 구하기
+		String path = session.getServletContext().getRealPath("/photo");
+
+		// 파일명 구하기
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName = "p_" + sdf.format(new Date()) + photo.getOriginalFilename();
+
+		try {
+			photo.transferTo(new File(path + "\\" + fileName));
+
+			service.updatePhoto(num, fileName); // db 사진 수정
+			session.setAttribute("loginphoto", fileName); // 세션의 사진 변경
+		} catch (IllegalStateException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@GetMapping("/member/updateform")
+	@ResponseBody
+	public MemberDto getData(String num) {
+		return service.getDataByNum(num);
+	}
+
+	@PostMapping("/member/update")
+	@ResponseBody
+	public void update(MemberDto dto, HttpSession session) {
+		service.updateMemeber(dto);
+
+		// 세션에 저장된 이름 변경
+		session.setAttribute("loginname", dto.getName());
 	}
 }

@@ -21,4 +21,12 @@ public interface MemberMapperInter {
 	public int loginIdPwCheck(Map<String, String> map);
 
 	public MemberDto getDataById(String id);
+
+	public void deleteMember(String num);
+
+	public void updatePhoto(Map<String, String> map);
+
+	public void updateMemeber(MemberDto dto);
+	
+	public MemberDto getDataByNum(String num);
 }

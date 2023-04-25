@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({ "boot.data.*", "boot.tiles.mini", "boot.*" }) // boot.*
-@MapperScan({ "boot.data.*" }) // boot.*
+@MapperScan({ "boot.*" }) // boot.*
 public class BootMiniProjectApplication {
 
 	public static void main(String[] args) {

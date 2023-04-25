@@ -21,12 +21,10 @@ ul.menu {
 }
 
 ul.menu li {
-	width: 120px;
+	width: 100px;
 	float: left;
-	border: 1px solid gray;
 	height: 60px;
 	line-height: 60px;
-	margin-right: 10px;
 	text-align: center;
 	font-size: 25px;
 	background-color: lightblue;
@@ -46,31 +44,33 @@ ul.menu li a {
 			<a href="${root }/">Home</a>
 		</li>
 		<li>
-			<a href="${root }/sub/ipgo/form">상품등록</a>
+			<a href="${root }/ipgo/list">입고목록</a>
 		</li>
 		<li>
-			<a href="${root }/sub/ipgo/list">상품목록</a>
+			<a href="${root }/board/list">게시판</a>
+		</li>
+			<c:if test="${sessionScope.loginok!=null and sessionScope.myid=='admin' }">
+		<li>
+				<a href="${root }/member/list">회원목록</a>
+		</li>
+			</c:if>
+		<li>
+			<a href="${root }/login/main">로그인</a>
 		</li>
 		<li>
-			<a href="${root }/sub/board/list">게시판</a>
+			<a href="${root }/member/form">회원가입</a>
 		</li>
 		<li>
-			<a href="${root }/sub/member/list">회원목록</a>
+			<a href="${root }/member/myinfo">나의정보</a>
 		</li>
 		<li>
-			<a href="${root }/sub/login/main">로그인</a>
+			<a href="${root }/ipgo/form">상품등록</a>
 		</li>
 		<li>
-			<a href="${root }/sub/member/form">회원가입</a>
+			<a href="${root }/sangpum/list">상품목록</a>
 		</li>
 		<li>
-			<a href="${root }/sub/member/myinfo">나의정보</a>
-		</li>
-		<li>
-			<a href="${root }/sub/sangpum/list">상품목록</a>
-		</li>
-		<li>
-			<a href="${root }/sub/load/map">오시는길</a>
+			<a href="${root }/load/map">오시는길</a>
 		</li>
 	</ul>
 </body>

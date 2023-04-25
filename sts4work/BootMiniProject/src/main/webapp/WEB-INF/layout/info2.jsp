@@ -25,7 +25,7 @@
 	<br>
 	<br>
 	<span class="glyphicon glyphicon-envelope">email</span>
-	&nbsp;sist@gmail.com
+	&nbsp;${sessionScope.loginemail}
 	<br>
 	<br>
 	<span class="glyphicon glyphicon-cog"></span>
@@ -33,7 +33,7 @@
 	<br>
 	<br>
 	<a href="">
-		<img alt="" src="../image/insta.PNG" style="width: 30px;">
+		<img alt="" src="../image/insta.jpeg" style="width: 30px;">
 		&nbsp;쌍용교육센터
 	</a>
 	<br>

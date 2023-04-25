@@ -29,10 +29,10 @@ public class IpgoController {
 
 	@GetMapping("/")
 	public String start() {
-		return "/sub/layout/main";
+		return "/layout/main";
 	}
 
-	@GetMapping("/sub/ipgo/list")
+	@GetMapping("/ipgo/list")
 	public ModelAndView list() {
 		ModelAndView mview = new ModelAndView();
 
@@ -50,19 +50,19 @@ public class IpgoController {
 		mview.addObject("totalCount", totalCount);
 
 		// mview.setViewName("ipgolist"); jsp 리졸버
-		mview.setViewName("/sub/ipgo/ipgolist"); // tiles 리졸버 /폴더명/파일명
+		mview.setViewName("/ipgo/ipgolist"); // tiles 리졸버 /폴더명/파일명
 
 		return mview;
 	}
 
-	@GetMapping("/sub/ipgo/form")
+	@GetMapping("/ipgo/form")
 	public String form() {
 
 //		return "ipgoform";
-		return "/sub/ipgo/ipgoform";
+		return "/ipgo/ipgoform";
 	}
 
-	@PostMapping("ipgo/insert")
+	@PostMapping("/ipgo/insert")
 	public String insert(@ModelAttribute IpgoDto dto, @RequestParam ArrayList<MultipartFile> upload, HttpSession session) {
 
 		String path = session.getServletContext().getRealPath("/photo");
@@ -97,8 +97,8 @@ public class IpgoController {
 	}
 
 	// 오시는 길로 가기.. 쌍용교육센터.. sub레이아웃으로 나오게
-	@GetMapping("/sub/load/map")
+	@GetMapping("load/map")
 	public String loadmap() {
-		return "/sub/load/map"; // tiles 레이아웃 /폴더명/파일명 or /sub/폴더명/파일명
+		return "load/map"; // tiles 레이아웃 /폴더명/파일명 or /폴더명/파일명
 	}
 }

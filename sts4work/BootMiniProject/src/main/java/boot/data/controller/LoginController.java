@@ -18,7 +18,7 @@ public class LoginController {
 	@Autowired
 	MemberService service;
 
-	@GetMapping("/sub/login/main")
+	@GetMapping("/login/main")
 	public String loginform(HttpSession session, Model model) {
 
 		// 폼의 아이디를 얻어줌
@@ -29,17 +29,17 @@ public class LoginController {
 
 		// 한 번도 실행안하면 null
 		if (loginok == null) {
-			return "/sub/login/loginform";
+			return "/login/loginform";
 		} else {
 			// 로그인 중일때 request에 로그인한 이름 저장하기
 			String name = service.getName(myid);
 			model.addAttribute("name", name);
-			return "/sub/login/logoutform";
+			return "/login/logoutform";
 		}
 
 	}
 
-	@PostMapping("/sub/login/loginprocess")
+	@PostMapping("/login/loginprocess")
 	public String loginproc(@RequestParam String id, @RequestParam String pw, @RequestParam(required = false) String cbsave, HttpSession session, Model model) {
 
 		// id와 pass받기
@@ -59,7 +59,7 @@ public class LoginController {
 
 			return "redirect:main";
 		} else {
-			return "/sub/member/passfail";
+			return "/member/passfail";
 		}
 	}
 

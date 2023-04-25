@@ -13,17 +13,12 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath()%>" />
-<body>
-	<div style="margin-left: 100px; margin-top: 100px;">
-		<img alt="" src="${root }/image/blackwidow.png" width="200" align="left" hspace="20">
+	<div style="padding-left: 500px">
+		<img alt="" src="${root }/image/8월의 크리스마스.jpeg" width="200" align="left" hspace="20">
 		<br>
 		<br>
 		<!--id통한 이름받아서 표시 -->
-		<b>${name }님 로그인중~~~</b>
-		<br>
-		<br>
-		<br>
-		<button type="button" class="btn btn-danger" onclick="location.href='logoutprocess'">로그아웃</button>
+		<b>${name }님 환영합니다!</b>
 	</div>
 </body>
 </html>

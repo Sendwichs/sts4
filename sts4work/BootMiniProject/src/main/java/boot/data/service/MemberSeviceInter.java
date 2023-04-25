@@ -1,6 +1,8 @@
 package boot.data.service;
 
 import java.util.List;
+import java.util.Map;
+
 import boot.data.dto.MemberDto;
 
 public interface MemberSeviceInter {
@@ -15,4 +17,12 @@ public interface MemberSeviceInter {
 	public int loginIdPwCheck(String id, String pw);
 
 	public MemberDto getDataById(String id);
+
+	public void deleteMember(String num);
+
+	public void updatePhoto(String num, String photo);
+
+	public void updateMemeber(MemberDto dto);
+	
+	public MemberDto getDataByNum(String num);
 }

@@ -22,10 +22,17 @@ body {
 
 div.layout div {
 	font-family: 'Nanum Pen Script', cursive;
+	height: 100px
+}
+
+div.layout div.info {
+
+position: relative;
+top: 300px
 }
 
 div.layout div.title {
-	position: absolute;
+	position: relative;
 	top: 10px;
 	left: 200px;
 	height: 130px;
@@ -34,17 +41,18 @@ div.layout div.title {
 
 div.layout div.menu {
 	position: absolute;
-	top: 150px;
+	width: 1500px;
+	top: 100px;
 	left: 200px;
 	font-family: 'Nanum Pen Script', cursive;
 }
 
 div.layout div.main {
 	position: relative;
-	top: 250px;
-	left: 250px;
+	left: 200px;
 	height: 800px;
 	font-family: 'Nanum Pen Script', cursive;
+	font-size: 15pt;
 }
 </style>
 </head>

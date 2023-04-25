@@ -22,12 +22,12 @@
 	<!-- tiles 매핑 경로 설정 -->
 	<!-- <definition name="home.tiles" extends="layout1"> <put-attribute name="main" value="/WEB-INF/layout/main.jsp" /> </definition> <definition name="ipgolist.tiles" extends="layout1"> <put-attribute name="main" value="/WEB-INF/ipgo/ipgolist.jsp" /> </definition> -->
 	<!-- wild card_macro설정 기본 -->
-	<definition name="/*/*" extends="layout1">
+<!-- 	<definition name="/*/*" extends="layout1">
 		<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp" />
-	</definition>
+	</definition> -->
 
 	<!-- 레이아웃2 -->
-	<definition name="/sub/*/*" extends="layout2">
+	<definition name="/*/*" extends="layout2">
 		<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp" />
 	</definition>
 </tiles-definitions>

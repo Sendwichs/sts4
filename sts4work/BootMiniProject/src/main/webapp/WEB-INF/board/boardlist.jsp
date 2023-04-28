@@ -41,9 +41,12 @@
 					<c:set var="no" value="${no-1 }" />
 					<td align="center">${dto.name }</td>
 					<td>
-						<a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }</a>
+						<a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject}</a>
+						<c:if test="${dto.acount>0 }">
+							<a href="content?num=${dto.num }&currentPage=${currentPage}" style="color: red" >[${dto.acount}]</a>
+						</c:if>
 						<c:if test="${dto.uploadfile!='no' }">
-						<span class="glyphicon glyphicon-paperclip"></span>
+							<span class="glyphicon glyphicon-paperclip" style="color: gray"></span>
 						</c:if>
 					</td>
 					<td align="center">${dto.readcount }</td>

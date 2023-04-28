@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 <style type="text/css">
 body {
-	font-size: 2em;
+	font-size: 1.5em;
 	font-family: Hi Melody;
 }
 
@@ -26,7 +26,7 @@ ul.menu li {
 	height: 60px;
 	line-height: 60px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 20px;
 	background-color: lightblue;
 	cursor: pointer;
 }
@@ -48,6 +48,14 @@ ul.menu li a {
 		</li>
 		<li>
 			<a href="${root }/board/list">게시판</a>
+		</li>
+		<li>
+			<a href="${root }/smart/list">스마트게시판</a>
+		
+		</li>
+		<li>
+			<a href="${root }/reboard/list">답변형게시판</a>
+		
 		</li>
 			<c:if test="${sessionScope.loginok!=null and sessionScope.myid=='admin' }">
 		<li>

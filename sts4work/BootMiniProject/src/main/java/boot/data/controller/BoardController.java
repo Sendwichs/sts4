@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import boot.data.dto.BoardDto;
+import boot.data.service.BoardAnswerService;
 import boot.data.service.BoardService;
 import boot.data.service.MemberService;
 
@@ -24,10 +25,13 @@ import boot.data.service.MemberService;
 public class BoardController {
 
 	@Autowired
+	BoardService service;
+
+	@Autowired
 	MemberService mservice;
 
 	@Autowired
-	BoardService service;
+	BoardAnswerService aservice;
 
 	@GetMapping("/board/list")
 	public ModelAndView boardlist(@RequestParam(defaultValue = "1") int currentPage) {
@@ -57,9 +61,15 @@ public class BoardController {
 		List<BoardDto> list = service.getList(start, perPage);
 
 		/*
-		 * // list에 각 글에 대한 댓글 개수 추가하기 for (BoardDto d : list) {
+		 * list에 각 글에 대한 댓글 개수 추가하기 for (BoardDto d : list) {
 		 * d.setAcount(adao.getAnswerList(d.getNum()).size()); }
 		 */
+
+		// 댓글 개수 추가
+		for (BoardDto d : list) {
+			d.setAcount(aservice.getAllAnswers(d.getNum()).size());
+			System.out.println(aservice.getAllAnswers(d.getNum()).size());
+		}
 
 		// 각페이지에 출력할 시작번호
 		int no = totalCount - (currentPage - 1) * perPage;
@@ -73,7 +83,7 @@ public class BoardController {
 		mview.addObject("perBlock", perBlock);
 		mview.addObject("currentPage", currentPage);
 		mview.addObject("no", no);
-		
+
 		mview.setViewName("/board/boardlist");
 
 		return mview;
@@ -93,10 +103,10 @@ public class BoardController {
 		// 업로드할 파일명
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 
-		// 업로드 안한 경우
+		// 업로드를 안한 경우
 		if (dto.getUpload().getOriginalFilename().equals("")) {
 			dto.setUploadfile("no");
-		} else {
+		} else { // 업로드를 한 경우
 			String uploadfile = "f_" + sdf.format(new Date()) + dto.getUpload().getOriginalFilename();
 			dto.setUploadfile(uploadfile);
 

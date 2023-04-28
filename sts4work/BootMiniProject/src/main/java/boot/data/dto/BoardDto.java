@@ -17,6 +17,7 @@ public class BoardDto {
 	private String subject;
 	private String content;
 	private String uploadfile;
+	private int acount;
 	private MultipartFile upload;
 	private int readcount;
 	private Timestamp writeday;

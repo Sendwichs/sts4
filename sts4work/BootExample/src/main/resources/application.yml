@@ -3,10 +3,10 @@ server:
   port: 1111
 #jsp
 spring:
-#  mvc:
-#    view:
-#      prefix: /WEB-INF/ipgo/
-#      suffix: .jsp
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
   devtools:
     livereload:
       enabled: true
@@ -18,6 +18,6 @@ spring:
     password: 1234
 #mybatis
 mybatis:
-  type-aliases-package: boot.data.dto,boot.data.mapper
+  type-aliases-package: boot.data.dto,boot.data.mapper,boot.*
   mapper-locations:
   - /mapper/**/*.xml

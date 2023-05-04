@@ -39,7 +39,7 @@
 			var day = addZero(dt.getDate());
 			var format = year + mon + day;
 			monthList.push(format);
-			monthData.push(Math.floor(Math.random() * 100));
+			monthData.push(Math.floor(Math.random() * 100000));
 		}
 
 		const ctx = document.getElementById('myChart').getContext('2d');

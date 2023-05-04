@@ -47,6 +47,9 @@ ul.menu li a {
 			<a href="${root }/ipgo/list">입고목록</a>
 		</li>
 		<li>
+			<a href="${root }/testing/list">실험실</a>
+		</li>
+		<li>
 			<a href="${root }/board/list">게시판</a>
 		</li>
 		<li>

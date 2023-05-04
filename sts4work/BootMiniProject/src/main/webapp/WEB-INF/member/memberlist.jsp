@@ -43,7 +43,7 @@ font-size: 15pt
 
 			$(".del:checked").each(function(i, elt) {
 				var num = $(this).attr("num");
-				//alert(num);
+				alert(num);
 
 				$.ajax({
 					type : "get",

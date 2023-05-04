@@ -12,7 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-
 <div class="searcharea" style="width: 800px; margin: 10px 100px;">
   <!-- 검색창 -->
   <form action="list" class="form-inline" style="width: 600px; margin-left: 100px;">
@@ -91,7 +90,6 @@
          </c:forEach>
       </c:if>
   </table>
-  
   <!--페이징  -->
   
      <div style="width: 800px; text-align: center;">
@@ -125,8 +123,6 @@
             </c:if>
         </ul>
      </div>
- 
-  
 </div>
 </body>
 </html>

@@ -18,34 +18,30 @@
 <script src="Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
-<style type="text/css">
-
-</style>
 </head>
 <body>
-	<c:set var="root" value="<%=request.getContextPath()%>" />
-	<div style="width: 1500px; height: 300px;">
+	<div style="width: 1000px; height: 500px;">
 		<!--차트가 그려질 부분-->
-		<canvas id="myChart" style="width:300px"></canvas>
+		<canvas id="myChart"></canvas>
 	</div>
 	<script>
 		function addZero(i) {
 			var rtn = i + 100;
-			return rtn.toString().replace("1","");
+			return rtn.toString().replace("1", "/");
 		}
-
 		var monthList = [];
-		var monthData = [ 50, 60, 70, 45, 50, 66, 60, 70, 45, 50, 66, 60, 70,
-				45, 50, 66, 60, 70, 45, 50, 66, 66, 60, 70, 45, 50, 66, 66, 60, 70, 45, 50, 66 ];
+		var monthData = [];
 		var today = new Date();
 		for (var i = 30; i >= 0; i--) {
-		  var dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i);
-		  var year = dt.getFullYear();
-		  var mon = addZero(dt.getMonth() + 1);
-		  var day = addZero(dt.getDate());
-		  var format = year + mon + day;
-		  monthList.push(format);
+			var dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i);
+			var year = dt.getFullYear();
+			var mon = addZero(dt.getMonth() + 1);
+			var day = addZero(dt.getDate());
+			var format = year + mon + day;
+			monthList.push(format);
+			monthData.push(Math.floor(Math.random() * 100));
 		}
+
 		const ctx = document.getElementById('myChart').getContext('2d');
 		const myChart = new Chart(ctx, {
 			type : 'line',
@@ -61,10 +57,10 @@
 			options : {
 				scales : {
 					x : {
-						 ticks: {
-						        maxRotation: 0,
-						      },
-						//display:false,
+						ticks : {
+							maxRotation : 0,
+						},
+						//display : false,
 						grid : {
 							display : false
 						}
@@ -88,15 +84,25 @@
 			}
 		});
 	</script>
-	<img alt="" src="${root }/image/겨울왕국1.jpeg" style="max-width: 150px; max-height: 300px; position: relative; left: 300px;">
-	<br>
-	<br>
-	<img alt="" src="${root }/image/겨울왕국2.jpeg" style="max-width: 150px; max-height: 300px; position: relative; left: 300px;">
-	<br>
-	<br>
-	<img alt="" src="${root }/image/곤지암.jpg" style="max-width: 150px; max-height: 300px; position: relative; left: 300px;">
-	<br>
-	<br>
+	<table class="table table-bordered">
 
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>가격</th>
+			<th>입고일</th>
+		</tr>
+
+		<c:forEach var="dto" items="${list }">
+			<tr>
+				<td>${dto.num }</td>
+				<td>${dto.name }</td>
+				<td>${dto.price }</td>
+				<td>
+					<fmt:formatDate value="${dto.ipgoday }" pattern="yyyy/MM/dd" />
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>
